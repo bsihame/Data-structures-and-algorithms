@@ -75,4 +75,18 @@ function smallestVal(arr) {
   }
   return "The smallest value is " + smallestValue;
 }
-console.log(smallestVal([70, 72, 68, -65, 74, 74, 73]));
+console.log(smallestVal([70, -72, 68, 10, 74, 74, 73]));
+
+console.log("=======================================================");
+console.log("Find the largest value in the array");
+
+function largestVal(arr) {
+  let largestValue = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > largestValue) {
+      largestValue = arr[i];
+    }
+  }
+  return "The largest value is " + largestValue;
+}
+console.log(largestVal([700, 72, -68, -1, -74, -74, -73]));
