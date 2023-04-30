@@ -62,3 +62,17 @@ function averageTemp(arr) {
   return "The average temperature for this week was " + totalTemp;
 }
 console.log(averageTemp(weeklyTemperature));
+
+console.log("=======================================================");
+console.log("Find the smallest value in the array");
+
+function smallestVal(arr) {
+  let smallestValue = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < smallestValue) {
+      smallestValue = arr[i];
+    }
+  }
+  return "The smallest value is " + smallestValue;
+}
+console.log(smallestVal([70, 72, 68, -65, 74, 74, 73]));
