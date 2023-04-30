@@ -27,13 +27,13 @@ console.log("Fixed array example");
 
 // we never use push or pop method
 const weeklyTemperature = [70, 72, 68, 65, 74, 74, 73];
-// console.log("The temperature on Sunday was ", weeklyTemperature[0]);
-// console.log("The temperature on Monday was ", weeklyTemperature[1]);
-// console.log("The temperature on Tuesday was ", weeklyTemperature[2]);
-// console.log("The temperature on Wednesday was ", weeklyTemperature[3]);
-// console.log("The temperature on Thursday was ", weeklyTemperature[4]);
-// console.log("The temperature on Friday was ", weeklyTemperature[5]);
-// console.log("The temperature on Saturday was ", weeklyTemperature[6]);
+console.log("The temperature on Sunday was ", weeklyTemperature[0]);
+console.log("The temperature on Monday was ", weeklyTemperature[1]);
+console.log("The temperature on Tuesday was ", weeklyTemperature[2]);
+console.log("The temperature on Wednesday was ", weeklyTemperature[3]);
+console.log("The temperature on Thursday was ", weeklyTemperature[4]);
+console.log("The temperature on Friday was ", weeklyTemperature[5]);
+console.log("The temperature on Saturday was ", weeklyTemperature[6]);
 
 //code more dry
 const weekdays = [
@@ -46,9 +46,9 @@ const weekdays = [
   "Saturday",
 ];
 for (let i = 0; i < weekdays.length; i++) {
-  // console.log(
-  //   "The temperature on " + weekdays[i] + " was " + weeklyTemperature[i]
-  // );
+  console.log(
+    "The temperature on " + weekdays[i] + " was " + weeklyTemperature[i]
+  );
 }
 
 console.log("=======================================================");
