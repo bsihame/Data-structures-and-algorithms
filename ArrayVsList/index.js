@@ -153,6 +153,7 @@ function contains(arr, value) {
   }
   return false;
 }
+
 console.log(contains([12, 45, 67, 90], 67));
 console.log(contains([12, 45, 67, 90], 1));
 console.log(contains([], 1));
@@ -160,7 +161,7 @@ console.log(contains([], 1));
 console.log("=======================================================");
 console.log("Is the array is sorted");
 
-// return true  if the array is sorted in acceding order where each element is greater or equal to element preceding
+// return true  if the array is sorted in acceding order where each element is greater or equal to element preceding it
 function isSorted(arr) {
   for (let i = 1; i < arr.length; i++) {
     if (arr.length === 0) return false;
@@ -170,9 +171,40 @@ function isSorted(arr) {
   }
   return true;
 }
+
 console.log(isSorted([1, 2, 3, 4, 5])); //==> true
 console.log(isSorted([1, 3, 2, 4, 5])); //==> false
 console.log(isSorted([1, 3, 2, 4, 5])); //==> false
-console.log(isSorted([1, 1, 1])); //==> false
-console.log(isSorted([1]));
-console.log(isSorted([]));
+console.log(isSorted([1, 1, 1])); //==> true
+console.log(isSorted([1])); //==> true
+console.log(isSorted([])); //==>  true
+
+console.log("=======================================================");
+console.log("Is the array is sorted either ascending or descending");
+
+//[1, 2, 3, 4, 5]
+//[4, 3, 2, 1, 5]
+//return true if the array is sorted either ascending, or descending
+
+function sorted2(arr) {
+  let ascending = true;
+  let descending = true;
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < arr[i - 1]) {
+      ascending = false;
+    }
+
+    if (arr[i] > arr[i - 1]) {
+      descending = false;
+    }
+  }
+
+  return ascending || descending;
+}
+console.log(sorted2([1, 2, 3, 4, 5])); //==> true
+console.log(sorted2([1, 3, 2, 4, 5])); //==> false
+console.log(sorted2([5, 4, 3, 2, 1])); //==> true
+console.log(sorted2([1, 1, 1])); //==> true
+console.log(sorted2([1])); //==> true
+console.log(sorted2([])); //==>  true
