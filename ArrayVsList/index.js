@@ -131,3 +131,27 @@ function sumDelta(arr) {
   return total;
 }
 console.log(sumDelta([2, 6, 12, 19]));
+//what if the array is empty ;
+console.log(sumDelta([]));
+// what if there is just one value
+console.log(sumDelta([2]));
+//  what if 2 values
+console.log(sumDelta([2, 4]));
+
+console.log("=======================================================");
+console.log("Find a value in an array");
+
+//  return true if the given array contains the given value
+//  given: [12, 45, 67, 90], 67 ==> true;
+// given: [12, 45, 67, 90], 1 ==> false;
+
+function contains(arr, value) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === value) {
+      return true;
+    }
+  }
+  return false;
+}
+console.log(contains([12, 45, 67, 90], 67));
+console.log(contains([12, 45, 67, 90], 1));
