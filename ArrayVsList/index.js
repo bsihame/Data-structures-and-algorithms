@@ -89,4 +89,45 @@ function largestVal(arr) {
   }
   return "The largest value is " + largestValue;
 }
-console.log(largestVal([700, 72, -68, -1, -74, -74, -73]));
+
+console.log("=======================================================");
+console.log("Reverse an array of string");
+// Input  : arr[] = {1, 2, 3}
+// Output : arr[] = {3, 2, 1}
+
+// Input :  arr[] = {4, 5, 1, 2}
+// Output : arr[] = {2, 1, 5, 4}
+
+function reversedArray(arr) {
+  // 1) Initialize start and end indexes as start = 0, end = n-1
+  let start = arr[0];
+  let end = arr[arr.length - 1];
+  //   2) In a loop, swap arr[start] with arr[end] and change start and end as follows :
+  // start = start +1, end = end – 1;
+  for (let i = start; i < arr.length; i++) {
+    for (let j = end; j < arr.length; i--) {
+      arr[i] = arr[j];
+      arr[j] = arr[i];
+    }
+  }
+  return arr;
+}
+console.log(reversedArray([700, 72, -68, -1, -74, -74, 80]));
+
+console.log("=======================================================");
+console.log("Sum of delta");
+//  accepts an array and returns the total of the differences of each value in the array
+//  given:[2, 6, 12,19];
+// returns(4+6+7)  -->  17
+
+function sumDelta(arr) {
+  let total = 0;
+  for (let i = 0; i < arr.length - 1; i++) {
+    let val1 = arr[i];
+    let val2 = arr[i + 1];
+    let delta = Math.abs(val1 - val2);
+    total += delta;
+  }
+  return total;
+}
+console.log(sumDelta([2, 6, 12, 19]));
