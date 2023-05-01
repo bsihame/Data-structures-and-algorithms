@@ -155,3 +155,24 @@ function contains(arr, value) {
 }
 console.log(contains([12, 45, 67, 90], 67));
 console.log(contains([12, 45, 67, 90], 1));
+console.log(contains([], 1));
+
+console.log("=======================================================");
+console.log("Is the array is sorted");
+
+// return true  if the array is sorted in acceding order where each element is greater or equal to element preceding
+function isSorted(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    if (arr.length === 0) return false;
+    if (arr[i - 1] > arr[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+console.log(isSorted([1, 2, 3, 4, 5])); //==> true
+console.log(isSorted([1, 3, 2, 4, 5])); //==> false
+console.log(isSorted([1, 3, 2, 4, 5])); //==> false
+console.log(isSorted([1, 1, 1])); //==> false
+console.log(isSorted([1]));
+console.log(isSorted([]));
