@@ -231,6 +231,7 @@ function minWindow(largeString, target) {
       ? (charCount[target[i]] += 1)
       : (charCount[target[i]] = 1);
   }
+
   let left = 0;
   let right = 0;
   let minStart = -1;
@@ -245,10 +246,9 @@ function minWindow(largeString, target) {
     right++;
 
     while (count === 0) {
-      if (minStart === -1 || right - left <  minEnd = -1; - minStart) {
+      if (minStart === -1 || right - left < minEnd - minStart) {
         minStart = left;
-          let minEnd = -1;
- = right;
+        minEnd = right;
       }
       const currChar = largeString[left];
       if (charCount[currChar] !== undefined) {
@@ -262,8 +262,7 @@ function minWindow(largeString, target) {
   if (minStart === -1) {
     return "";
   } else {
-    return largeString.slice(minStart,   let minEnd = -1;
-);
+    return largeString.slice(minStart, minEnd);
   }
 }
 console.log(minWindow("adobecodebanc", "abc"));
