@@ -208,3 +208,62 @@ console.log(sorted2([5, 4, 3, 2, 1])); //==> true
 console.log(sorted2([1, 1, 1])); //==> true
 console.log(sorted2([1])); //==> true
 console.log(sorted2([])); //==>  true
+
+console.log("=======================================================");
+console.log("Minimum Window Substring");
+// A substring is a contiguous non-empty sequence of characters within a string.
+
+// Given two strings largeString and target, return the minimum substring of largeString such that every character in target is included in the substring. If there is no such substring, return an empty string "".
+
+// Constraints:
+// • largeString and target are lowercase letters with no punctuation
+// • target does not have any duplicate characters
+
+// Example 1:
+//   Input: largeString = "adobecodebanc", target = "abc"
+//   Output: "banc"
+//   Explanation: The minimum substring "banc" includes 'a', 'b', and 'c' from target string.
+function minWindow(largeString, target) {
+  // create hashmap for the count of the Char
+  let charCount = {};
+  for (let i = 0; i < target.length; i++) {
+    charCount[target[i]]
+      ? (charCount[target[i]] += 1)
+      : (charCount[target[i]] = 1);
+  }
+  let left = 0;
+  let right = 0;
+  let minStart = -1;
+  let minEnd = -1;
+  let count = Object.keys(charCount).length;
+  while (right < largeString.length) {
+    const currChar = largeString[right];
+    if (charCount[currChar] !== undefined) {
+      charCount[currChar]--;
+      if (charCount[currChar] === 0) count--;
+    }
+    right++;
+
+    while (count === 0) {
+      if (minStart === -1 || right - left <  minEnd = -1; - minStart) {
+        minStart = left;
+          let minEnd = -1;
+ = right;
+      }
+      const currChar = largeString[left];
+      if (charCount[currChar] !== undefined) {
+        charCount[currChar]++;
+        if (charCount[currChar] > 0) count++;
+      }
+      left++;
+    }
+  }
+
+  if (minStart === -1) {
+    return "";
+  } else {
+    return largeString.slice(minStart,   let minEnd = -1;
+);
+  }
+}
+console.log(minWindow("adobecodebanc", "abc"));
