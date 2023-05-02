@@ -266,3 +266,36 @@ function minWindow(largeString, target) {
   }
 }
 console.log(minWindow("adobecodebanc", "abc"));
+
+console.log("=======================================================");
+console.log("Find the largest three distinct element in an array");
+
+// Given an array with all distinct elements, find the largest three elements. Expected time complexity is O(n) and extra space is O(1).
+
+// Examples :
+
+// Input: arr[] = {10, 4, 3, 50, 23, 90}
+// Output: 90, 50, 23
+
+function largestTreeElements(arr) {
+  let first = -Infinity;
+  let second = -Infinity;
+  let third = -Infinity;
+  if (arr.length < 3) return "Invalid Input";
+  for (let i = 0; i < arr.length; i++) {
+    let curr = arr[i];
+    if (curr > first) {
+      third = second;
+      second = first;
+      first = curr;
+    } else if (curr > second) {
+      third = second;
+      second = curr;
+    } else if (curr > third) {
+      third = curr;
+    }
+  }
+  return [first, second, third];
+}
+
+console.log(largestTreeElements([10, 4, 3, 50, 23, 90]));
